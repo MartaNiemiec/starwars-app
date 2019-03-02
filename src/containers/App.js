@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Categories from '../components/Categories';
 import SearchBox from '../components/SearchBox';
 import CardList from '../components/Cardlist';
 import Scroll from '../components/Scroll';
@@ -79,15 +80,10 @@ class App extends Component {
   constructor() {
     super() // calls the constructor of Component
     this.state = {
-        films: [],
+        category: '',
+        data: [],
         searchfield: '' 
     }
-  }
-
-  componentDidMount() {
-    fetch('https://swapi.co/api/films')  //fetch is a part of the window object
-    .then(response => response.json())  //response return a promise
-    .then(films => this.setState({films: films.results}) );
   }
 
   // With anything that comes from React, so constructor and render, are pre-built in React, any time we make our own methods on a component, we have to use arrow functions, and this makes sure that the 'this' value is according to where it was created, which is the 'App'
@@ -95,10 +91,22 @@ class App extends Component {
     this.setState({ searchfield: event.target.value })
   }
 
+  onCategoryClick = (event) => {
+    const category = event.target.textContent;
+
+    fetch(`https://swapi.co/api/${category}`)  //fetch is a part of the window object
+    .then(response => response.json())  //response return a promise
+    .then(data => {
+      this.setState({data: data.results, category: category})
+     } );
+  }
+
   render() {
-    const {films, searchfield} = this.state;
-    const filteredFilms = films.filter(film => {
-      return film.title.toLowerCase().includes(searchfield.toLowerCase());
+    const {category, data, searchfield} = this.state;
+    const filteredCategory = data.filter(object => {
+      const obj = object.name ? object.name : object.title;
+      return obj.toLowerCase().includes(searchfield.toLowerCase());
+      
     })
     return (
       <div>
@@ -106,18 +114,15 @@ class App extends Component {
         className='particles' 
         params={particlesOptions} 
         />
-          {/*if films.length==0 so it's true, !the opposite is false */}
-        { (!films.length) 
-        ? <h1 className='f1 tc'>Loading...</h1> 
-        : (
+         
             <div className='tc'>
-                <h1 className='f1'>STARWARS</h1>
+                <h1 className='color-orange font-huge'>STARWARS</h1>
                 <SearchBox searchChange={this.onSearchChange}/>
+                <Categories onCategoryClick={this.onCategoryClick}/>
                 <Scroll>
-                  <CardList films={filteredFilms}/>
+                  <CardList object={filteredCategory} category={category}/>
                 </Scroll>
             </div>
-          )}
       </div>
     )
   }

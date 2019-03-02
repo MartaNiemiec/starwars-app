@@ -10,14 +10,89 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #002350;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #01152E, #002350);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #01152E, #002350); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: #002350;  fallback for old browsers */
+  background: -webkit-linear-gradient(to right, var(--main-bg-color), var(--second-bg-color));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, var(--main-bg-color), var(--second-bg-color)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* COLOR PALETTES: */
+/* #112741
+#0894a1
+#f2b134
+#47ab6c
+#ed553b */
+
+:root {
+  --main-bg-color:#112741;
+  --second-bg-color:#0894a1;
+  --color-orange:#f2b134;
+  --color-green:#47ab6c;
+  --color-red:#ed553b;
+}
+
+.color-orange {
+  color: var(--color-orange);
+}
+
+.bg_color-green {
+  background: var(--color-green);
+}
+
+.bg_color-second {
+  background: var(--second-bg-color);
+
+} 
+
+.bg_color-green:hover,
+.bg_color-green:active,
+.bg_color-green:focus {
+  background: var(--color-orange);
+}
+
+.bg-card-title {
+  overflow: hidden;
+  color: #fff;
+  transform:translateY(25%);
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  background-image: linear-gradient( to bottom, var(--color-green), var(--second-bg-color));
+  z-index:3;
+  position:relative;
+  
+  
+    
+}
+
+.button-categories {
+  background:transparent;
+  box-shadow: 0 0 8px 2px rgba( 255,255,255, 0.7 );
+  color:white;
+}
+
+.button-categories:hover,
+.button-categories:focus,
+.button-categories:active {
+  background: rgba(255, 255, 255, .9);
+  color: var(--main-bg-color);
+}
+
+.bg-card-content {
+  color: white;
+  background: rgba(0,0,0,.3);
+  padding:1rem;
+  padding-top:2rem;
+  z-index:2;
+  position:relative;
+  letter-spacing: .05rem;
+}
+
+.border:focus,
+.border:active {
+  box-shadow: 0 0 15px 8px rgba( 237, 85, 59, 0.9 );
 }
 
 /* width */
