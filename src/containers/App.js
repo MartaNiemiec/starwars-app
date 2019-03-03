@@ -12,7 +12,7 @@ const particlesOptions = {
       value: 150,
       density: {
         enable: true,
-        value_area: 300
+        value_area: 100
       }
     },
     color: {
@@ -61,7 +61,7 @@ const particlesOptions = {
     }
   },
   interactivity: {
-    detect_on: 'window',
+    detect_on: 'canvas',
     modes: {
       repulse: {
         distance: 100,
@@ -110,19 +110,15 @@ class App extends Component {
     })
     return (
       <div>
-        <Particles 
-        className='particles' 
-        params={particlesOptions} 
-        />
-         
-            <div className='tc'>
-                <h1 className='color-orange font-huge'>STARWARS</h1>
-                <SearchBox searchChange={this.onSearchChange}/>
-                <Categories onCategoryClick={this.onCategoryClick}/>
-                <Scroll>
-                  <CardList object={filteredCategory} category={category}/>
-                </Scroll>
-            </div>
+        <Particles className='particles' params={particlesOptions}/>
+        <div className='tc'>
+          <h1 className='color-orange f2 f1-m f1-ns ma2 ma2-m ma2-ns'>STARWARS</h1>
+          <SearchBox searchChange={this.onSearchChange}/>
+          <Categories onCategoryClick={this.onCategoryClick}/>
+          <Scroll>
+            <CardList object={filteredCategory} category={category} />
+          </Scroll>
+        </div>
       </div>
     )
   }

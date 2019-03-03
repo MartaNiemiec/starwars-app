@@ -2,14 +2,14 @@ import React from 'react';
 
 const Categories = ({ onCategoryClick }) => {
   return ( 
-      <div className="mb4">
-        <button onClick={onCategoryClick} className='grow button-categories b pa3 ma2 f4 ttu bg-animate bn pointer br1'>people</button>
-        <button onClick={onCategoryClick} className='grow button-categories b pa3 ma2 f4 ttu bg-animate bn pointer br1'>films</button>
-        <button onClick={onCategoryClick} className='grow button-categories b pa3 ma2 f4 ttu bg-animate bn pointer br1'>starships</button>
-        <button onClick={onCategoryClick} className='grow button-categories b pa3 ma2 f4 ttu bg-animate bn pointer br1'>vehicles</button>
-        <button onClick={onCategoryClick} className='grow button-categories b pa3 ma2 f4 ttu bg-animate bn pointer br1'>species</button>
-        <button onClick={onCategoryClick} className='grow button-categories b pa3 ma2 f4 ttu bg-animate bn pointer br1'>planets</button>
-      </div>
+    <nav className="f6 fw6 ttu ma1">
+      <p onClick={onCategoryClick} className="b-solid pointer bw1 b--white button-categories f4 f6-s pa2 pa3-m pa3-l white dib">people</p>
+      <p onClick={onCategoryClick} className="b-solid pointer bw1 b--white button-categories f4 f6-s pa2 pa3-m pa3-l white dib">films</p>
+      <p onClick={onCategoryClick} className="b-solid pointer bw1 b--white button-categories f4 f6-s pa2 pa3-m pa3-l white dib">starships</p>
+      <p onClick={onCategoryClick} className="b-solid pointer bw1 b--white button-categories f4 f6-s pa2 pa3-m pa3-l white dib">vehicles</p>
+      <p onClick={onCategoryClick} className="b-solid pointer bw1 b--white button-categories f4 f6-s pa2 pa3-m pa3-l white dib">species</p>
+      <p onClick={onCategoryClick} className="b-solid pointer bw1 b--white button-categories f4 f6-s pa2 pa3-m pa3-l white dib">planets</p>
+    </nav>
   )
 }
 
