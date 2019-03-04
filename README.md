@@ -12,3 +12,5 @@ Building using:
 * React Particles.js [:link:](https://www.npmjs.com/package/react-particles-js).
 
 ### LIVE APP [:arrow_forward:](https://martaniemiec.github.io/starwars_api/)
+
+![Star Wars app](starwarsAPI.png)
