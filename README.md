@@ -2,7 +2,7 @@ A single page application using Star Wars API and uses fetch() to retrieve infor
 
 Exercise from *The Complete Web Developer in 2019: Zero to Mastery by Andrei Neagoie* [:link:](https://www.udemy.com/the-complete-web-developer-zero-to-mastery/learn/v4/overview)
 
-Building using:
+Built using:
 * HTML,
 * CSS,
 * NPM,
